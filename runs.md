@@ -1,5 +1,10 @@
+[Old News]({% link /Archive/2009/NH4_Archives.htm %}) | 
+[Ancient News]({% link /Archive/2009/NH4_Arch2000.htm %})
+{% capture now %}{{'now' | date: '%s' | plus: 0 %}}{% endcapture %}
+{% assign runlist = site.data.runlist | sort: 'RunNo' %}
 <table id="runlist-tbl">
-  {% for row in site.data.runlist %}
+  {% for row in runlist %}
+  {% capture date %}{{post.date | date: '%s' | plus: 0 %}}{% endcapture %}
     {% if forloop.first %}
     <tr id="runlist-head">
       <th class="runno">Run No.</th>
@@ -10,8 +15,9 @@
       <th class="note hideonmobile">Notes</th>
     </tr>
     {% endif %}
-    <tr id="runno_{{ row["RunNo"] }}">
-        <td class="runno">{{ row["RunNo"] }}</td>
+    {% if date <= now %}
+    <tr id="runno_{{ row.RunNo }}">
+        <td class="runno">{{ row.RunNo }}</td>
         <td id="location"><div class="location">{{ row["Location"] }}</div>
             <span class="location-links">
                 {{ row["PostCode"] }}<br/>
@@ -24,5 +30,6 @@
         <td class="hideonmobile">{{ row["On Inn"] }}</td>
         <td class="hideonmobile">{{ row["Notes"] }}</td>
     </tr>
+    {% endif %}
   {% endfor %}
 </table>

@@ -29,6 +29,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://nh4.org
 twitter_username: nh4hash
 github_username:  nh4hash
 
+timezone: Europe/London
+
 # Build settings
 remote_theme: knhash/Pudhina
 plugins:
