@@ -15,14 +15,19 @@
       <th class="note hideonmobile">Notes</th>
     </tr>
     {% endif %}
-    {% if date <= now %}
+    {% if date != nil and date <= now and row.RunNo != nil %}
     <tr id="runno_{{ row.RunNo }}">
         <td class="runno">{{ row.RunNo }}</td>
-        <td id="location"><div class="location">{{ row["Location"] }}</div>
+        <td id="location"><div class="location">
+            {% if row.coordinates == nil %}
+                {{row.Location}}
+            {% else %}
+                <a href='https://www.google.com/maps/search/?api=1&query={{ row.coordinates }}' target='_blank'>{{row.Location}}</a>
+            {% endif %}</div>
             <span class="location-links">
                 {{ row["PostCode"] }}<br/>
-                <a href ="https://w3w.co/{{ row["What3Words"] }}">{{ row["What3Words"] }}</a><br/>
-                {{ row["OSGrid"] }}
+                <a href ="https://w3w.co/{{ row["What3Words"] }}" target='_blank'>{{ row["What3Words"] }}</a><br/>
+                {% if row.OSGrid != nil and row.coordinates != nil %}<a href ="https://streetmap.co.uk/loc/{{ row.coordinates }}" target='_blank'>{{ row.OSGrid }}</a>{% endif %}
             </span>
         </td>
         <td>{{ row["Date"] | date: "%b %d" }}<br/>{{ row["Time"] | date: "%I:%M %p" }}</td>
