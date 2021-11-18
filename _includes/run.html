@@ -1,0 +1,27 @@
+{% assign runs = site.data.runlist | where:'RunNo', include.runno %}
+{% assign run = runs.first %}
+
+<h1 class="page-title">
+     <div class="page-title__text">{{include.RunTitle}}<br/>{{run.RunNo}}</div>
+     <div class="page-title__subtitle">{{include.HaresTitle}} - {{run.Hares}}</div>
+</h1>
+
+
+<h3 class="page-title">
+     <div class="page-title__text">{{run.Date | date: "%b %d"}} @{{run.Time | date: "%I:%M %p" }}</div>
+</h3>
+
+
+<div class="about__text">
+     <a href='https://www.google.com/maps/search/?api=1&query={{ run.coordinates }}' target='_blank'>{{run.Location}}</a> - {{run.PostCode}}
+     <p>W3W:///<a href ="https://w3w.co/{{ run.What3Words }}" target='_blank'>{{ run.What3Words }}</a><br/></p>
+     <a href ="https://streetmap.co.uk/loc/{{ run.coordinates }}" target='_blank'>{{ run.OSGrid }}</a>
+</div>
+
+<h3 class="page-title__subtext"><div>On Inn</div></h3>
+
+<div>{{run["On Inn"]}}</div>
+
+<h3 class="page-title__subtext">Notes</h3>
+<div>{{run.Notes}}</div>
+<div class="about"><div class="about__devider">*****</div></div>

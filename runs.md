@@ -1,21 +1,14 @@
 [Old News]({% link /Archive/2009/NH4_Archives.htm %}) | 
 [Ancient News]({% link /Archive/2009/NH4_Arch2000.htm %})
-{% capture now %}{{'now' | date: '%s' | plus: 0 %}}{% endcapture %}
+{% capture now %}
+    {{'now' | date: '%s' | plus: 0 }}
+{% endcapture %}
 {% assign runlist = site.data.runlist | sort: 'RunNo' %}
 <table id="runlist-tbl">
   {% for row in runlist %}
-  {% capture date %}{{post.date | date: '%s' | plus: 0 %}}{% endcapture %}
-    {% if forloop.first %}
-    <tr id="runlist-head">
-      <th class="runno">Run No.</th>
-      <th class="where">Where</th>
-      <th class="when">When</th>
-      <th class="who hideonmobile">Who</th>
-      <th class="oninn hideonmobile">On Inn</th>
-      <th class="note hideonmobile">Notes</th>
-    </tr>
-    {% endif %}
-    {% if date != nil and date <= now and row.RunNo != nil %}
+  {% capture date %}{{post.date | date: '%s' | plus: 0}}{% endcapture %}
+    {% if forloop.first %}{% include runlistheader.html %}{% endif %}
+    {% if date != nil and date >= now and row.RunNo != nil %}
     <tr id="runno_{{ row.RunNo }}">
         <td class="runno">{{ row.RunNo }}</td>
         <td id="location"><div class="location">
