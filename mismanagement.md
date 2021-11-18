@@ -3,7 +3,7 @@
 ## Hash Committee {{fools_hash[0]}} - {{fools_hash[0] | plus: 1}}
   {% for person in people %}
 
-<ul id="mismanagement">
+<ul class="mismanagement">
     <li><strong>{{ person.title }}</strong> - {{ person.name }}</li>
 </ul>
   {% endfor %}

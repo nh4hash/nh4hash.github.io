@@ -94,6 +94,20 @@
     margin-left: 10px; }
 
 /* =Titles *//*************************************************************/
+  div.h1 {
+  font-size: xx-large;
+  text-align: center; }
+
+  div.h2 {
+  font-size: x-large;
+  text-align: center; }
+
+  
+  div.h3 {
+  font-size: x-small;
+  text-align: center; }
+
+
   .page-title {
     margin: 30px auto;
     text-align: center; }

@@ -11,7 +11,7 @@
     {% if date != nil and date >= now and row.RunNo != nil %}
     <tr id="runno_{{ row.RunNo }}">
         <td class="runno">{{ row.RunNo }}</td>
-        <td id="location"><div class="location">
+        <td><div class="location">
             {% if row.coordinates == nil %}
                 {{row.Location}}
             {% else %}
