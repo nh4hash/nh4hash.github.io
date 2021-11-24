@@ -1,20 +1,14 @@
-[Old News]({% link /Archive/2009/NH4_Archives.htm %}) | 
-[Ancient News]({% link /Archive/2009/NH4_Arch2000.htm %})
-{% capture now %}
-    {{'now' | date: '%s' | plus: 0 }}
-{% endcapture %}
+[Old News](https://old.nh4.org/2009/NH4_Arch2000.htm){:target="_blank"} | 
+[Ancient News](https://old.nh4.org/2009/NH4_Archives.htm){:target="_blank"}
 {% assign runlist = site.data.runlist | sort: 'RunNo' %}
 <table id="runlist-tbl">
   {% for row in runlist %}
-  {% capture date %}{{post.date | date: '%s' | plus: 0}}{% endcapture %}
     {% if forloop.first %}{% include runlistheader.html %}{% endif %}
-    {% if date != nil and date >= now and row.RunNo != nil %}
+    {% if row.RunNo != nil %}
     <tr id="runno_{{ row.RunNo }}">
         <td class="runno">{{ row.RunNo }}</td>
         <td><div class="location">
-            {% if row.coordinates == nil %}
-                {{row.Location}}
-            {% else %}
+            {% if row.coordinates != nil %}
                 <a href='https://www.google.com/maps/search/?api=1&query={{ row.coordinates }}' target='_blank'>{{row.Location}}</a>
             {% endif %}</div>
             <span class="location-links">
