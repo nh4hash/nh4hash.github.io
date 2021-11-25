@@ -21,9 +21,6 @@ jobs:
     
     steps:
       - name: wget
-        uses: wei/wget@v1
+        uses: wei/curl@master
         with: 
-          args: "--quiet --output-document=- --content-on-error --header='Content-Type: application/json' --post-data=\"{'ref':'refs/heads/gh-pages'}\" '${{secrets.DEPLOY_PHP_URL}}${{secrets.DEPLOY_PHP_TOKEN}}'"
-        # Runs a set of commands using the runners shell
-        # - name: Trigger git pull on production server
-        # run: "wget --quiet --output-document=- --content-on-error --header='Content-Type: application/json' --post-data=\"{'ref':'refs/heads/gh-pages'}\" '${{secrets.DEPLOY_PHP_URL}}${{secrets.DEPLOY_PHP_TOKEN}}'"
+          args: "--location --request POST '${{secrets.DEPLOY_PHP_URL}}${{secrets.DEPLOY_PHP_TOKEN}}' --header 'Content-Type: application/json' --data-raw '{\"ref\":\"refs/heads/gh-pages\"}'"
