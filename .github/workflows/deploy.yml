@@ -1,0 +1,13 @@
+name: Build and deploy Jekyll site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # or master before October 2020
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "wget --quiet --output-document=- --content-on-error --header='Content-Type: application/json' --post-data=\"{'ref':'refs/heads/gh-pages'}\" '${{secrets.DEPLOY_PHP_URL}}${{secrets.DEPLOY_PHP_TOKEN}}'"
+      - name: Deploy to production
