@@ -22,4 +22,5 @@ jobs:
           secret_gh_pages_api_token: ${{ secrets.GH_TOKEN }}
           gh_pages_publishing_source: 'gh-pages'
           git_commit_message: 'Build Action'
+          post_build_commands: 'touch .nojekyll'
       #- run: "wget --quiet --output-document=- --content-on-error --header='Content-Type: application/json' --post-data=\"{'ref':'refs/heads/gh-pages'}\" '${{secrets.DEPLOY_PHP_URL}}${{secrets.DEPLOY_PHP_TOKEN}}'"
