@@ -1,0 +1,25 @@
+name: Build and deploy Jekyll site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # or master before October 2020
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - uses: nh4hash/jekyll-builder-for-github-pages-action@master
+        with:
+          secret_gh_pages_api_token: ${{ secrets.GH_TOKEN }}
+          gh_pages_publishing_source: 'gh-pages'
+          git_commit_message: 'Build Action'
+      #- run: "wget --quiet --output-document=- --content-on-error --header='Content-Type: application/json' --post-data=\"{'ref':'refs/heads/gh-pages'}\" '${{secrets.DEPLOY_PHP_URL}}${{secrets.DEPLOY_PHP_TOKEN}}'"
