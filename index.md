@@ -10,3 +10,14 @@
 [{{post.location}}]({{post.url}})
 <div class="page-title__subtext"><strong>{{post.hares}}</strong></div>
 <div>{{post.excerpt}}</div>
+
+
+{% assign event = site.posts.last %}
+<div class="h2">
+     <p class="page-title__text">Events</p>
+     <p class="page-title__subtext">{{event.title}}</p>
+</div>
+
+[Details]({{event.url}})
+<div class="page-title__subtext"><strong>{{event.author}}</strong></div>
+<div>{{event.excerpt}}</div>
