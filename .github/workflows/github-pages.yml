@@ -37,4 +37,4 @@ jobs:
           # GITHUB_TOKEN secret is set up automatically
           github_token: ${{ secrets.GH_TOKEN }}
           publish_branch: gh-pages-dev
-          publish_dir: ./
+          publish_dir: _site
