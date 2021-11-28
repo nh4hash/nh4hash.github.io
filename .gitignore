@@ -1,0 +1,9 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+*.sh
+*.code-workspace
+/node_modules
+/assets/css/style.css
