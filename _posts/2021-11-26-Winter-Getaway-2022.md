@@ -9,7 +9,7 @@ author: Damp Patch & Er Indoors
 The winter weekend getaway for January 2022 will be Newbury. The dates are Friday 28th January and Saturday 29th January.
 <!--more-->
 
-### Accommodation: [Premier Inn](https://www.premierinn.com/gb/en/hotels/england/berkshire/newbury/newbury-town-centre-london-road.html?ARRdd=28&ARRmm=01&ARRyyyy=2022&NIGHTS=2&ROOMS=1&ADULT1=1&CHILD1=0&COT1=0&INTTYP1=DB&BRAND=PI)
+### Accommodation: [Premier Inn](https://www.premierinn.com/gb/en/hotels/england/berkshire/newbury/newbury-town-centre-london-road.html?ARRdd=28&ARRmm=01&ARRyyyy=2022&NIGHTS=2&ROOMS=1&ADULT1=1&CHILD1=0&COT1=0&INTTYP1=DB&BRAND=PI){:target="_blank"}
 
     Premier Inn (there is another one so please be careful which one you book)
     Park Way 
