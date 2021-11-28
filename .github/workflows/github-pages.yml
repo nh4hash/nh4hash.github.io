@@ -23,7 +23,6 @@ jobs:
           node-version: '14'
       # Install PostCSS plugins (from your package.json)
       - run: npm install
-      - name: Build site
       - name: Build the site in the jekyll/builder container
         run: |
           docker run \
