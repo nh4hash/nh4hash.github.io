@@ -32,7 +32,8 @@ timezone: Europe/London
 # Build settings
 remote_theme: knhash/Pudhina
 plugins:
-  - jekyll-feed
+  - jekyll-postcss-v2
+  #- jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
