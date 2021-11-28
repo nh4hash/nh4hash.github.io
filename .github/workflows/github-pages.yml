@@ -27,7 +27,7 @@ jobs:
         run: |
           docker run \
           -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && npm run build"
+          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && bundle install && npm run build"
          
       # use actions-gh-pages to deploy
       # https://github.com/peaceiris/actions-gh-pages
