@@ -24,14 +24,12 @@ jobs:
       # Install PostCSS plugins (from your package.json)
       - run: npm install
       - name: Build site
-      # use jekyll-action-ts to build
-      # https://github.com/limjh16/jekyll-action-ts
-        uses: limjh16/jekyll-action-ts@v2
-        with:
-          enable_cache: true
-          # custom_opts: '--verbose --trace'  #'--drafts --future'
-          ### If you need to specify any Jekyll build options, enable the above input
-          ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
+      - name: Build the site in the jekyll/builder container
+        run: |
+          docker run \
+          -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+         
       # use actions-gh-pages to deploy
       # https://github.com/peaceiris/actions-gh-pages
       - name: Deploy
