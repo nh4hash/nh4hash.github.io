@@ -3,23 +3,38 @@ name: Build and deploy Jekyll site to GitHub Pages
 on:
   push:
     branches:
-      - master # or master before October 2020
+      - development # or master before October 2020
 
 jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # Use GitHub Actions' cache to shorten build times and decrease load on servers
-      - uses: actions/cache@v2
+      # Use ruby/setup-ruby to shorten build times
+      # https://github.com/ruby/setup-ruby
+      #- uses: ruby/setup-ruby@v1
+      #  with:
+      #    ruby-version: 2.7 # Not needed with a .ruby-version file
+      #    bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      # Install Node as this is needed for PostCSS
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - uses: nh4hash/jekyll-builder-for-github-pages-action@master
+          node-version: '14'
+      # Install PostCSS plugins (from your package.json)
+      - run: npm install
+      - name: Build the site in the jekyll/builder container
+        run: |
+          docker run \
+          -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && npm run build"
+         
+      # use actions-gh-pages to deploy
+      # https://github.com/peaceiris/actions-gh-pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          secret_gh_pages_api_token: ${{ secrets.GH_TOKEN }}
-          gh_pages_publishing_source: 'gh-pages'
-          git_commit_message: 'Build Action'
-      #- run: "wget --quiet --output-document=- --content-on-error --header='Content-Type: application/json' --post-data=\"{'ref':'refs/heads/gh-pages'}\" '${{secrets.DEPLOY_PHP_URL}}${{secrets.DEPLOY_PHP_TOKEN}}'"
+          # GITHUB_TOKEN secret is set up automatically
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_branch: gh-pages-dev
+          publish_dir: _site
