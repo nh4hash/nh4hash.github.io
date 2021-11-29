@@ -48,7 +48,7 @@ exclude:
     - package.json
     - postcss.config.js
     - README.md
-    - CNAME
+#   - CNAME
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
