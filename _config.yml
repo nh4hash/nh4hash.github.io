@@ -30,7 +30,7 @@ github_username:  nh4hash
 timezone: Europe/London
 
 # Build settings
-remote_theme: knhash/Pudhina
+#remote_theme: knhash/Pudhina
 plugins:
   - jekyll-postcss-v2
   #- jekyll-feed
