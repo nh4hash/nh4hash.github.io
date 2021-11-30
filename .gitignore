@@ -5,3 +5,4 @@ _site
 vendor
 *.sh
 *.code-workspace
+node_modules
