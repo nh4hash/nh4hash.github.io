@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include meta_tags/base.html %}
+{% include externals/styling.html %}
+</head>
+
+
+
+<body class="bg-yellow-50">
+    <div class="relative w-full bg-gray-500">
+
+        <img class="mix-blend-overlay absolute w-full h-full bg-no-repeat bg-cover" style="background-image: url('/assets/img/NH4_XP_Background.resized.jpg');">
+        
+        {% include hero/header.html %}
+        
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <img class="relative mix-blend-lighten max-h-96 w-full object-contain object-left p-10" src="/assets/img/NH4_Front_Page.jpg">
+                </div>
+                <div class="flex-grow w-8"></div>   
+                <div class="text-white flex-grow bg-gray-500 mt-8 p-3 text-4xl flex-initial text-left whitespace-nowrap">{{site.title}}</div>
+            </div>
+            <img class="absolute top-52 left-1/2 transform -translate-x-1/2" src="/assets/img/NH4_Front_Page.jpg"> 
+    </div>
+    
+
+<div class="relatve w-full prose-lg">
+    <div class="h-screen">&nbsp;</div>
+{% include hero/title.html %}
+{{ content }}
+</div>
+{% include externals/scripting.html %}
+dsfsdfsdf
+</body>
+</html>
