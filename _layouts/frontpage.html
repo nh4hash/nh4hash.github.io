@@ -14,20 +14,33 @@
         
         {% include hero/header.html %}
         
-            <div class="flex">
+            <div class="flex space-x-4">
                 <div class="flex-shrink-0">
-                    <img class="relative mix-blend-lighten max-h-96 w-full object-contain object-left p-10" src="/assets/img/NH4_Front_Page.jpg">
+                    <img class="relative ml-5 m-5 mb-10 mt-10 rounded-3xl mix-blend-lighten max-h-96 object-contain" src="/assets/img/NH4_Front_Page.jpg">
                 </div>
                 <div class="flex-grow w-8"></div>   
                 <div class="text-white flex-grow bg-gray-500 mt-8 p-3 text-4xl flex-initial text-left whitespace-nowrap">{{site.title}}</div>
             </div>
-            <img class="absolute top-52 left-1/2 transform -translate-x-1/2" src="/assets/img/NH4_Front_Page.jpg"> 
     </div>
-    
 
 <div class="relatve w-full prose-lg">
-    <div class="h-screen">&nbsp;</div>
+    <div class="">&nbsp;</div>
 {% include hero/title.html %}
+
+
+<div class="bg-gray-300 w-1/2 rounded-lg shadow-xl ml-10">
+    <div class="absolute ml-3 -mt-3"><img class="w-2/3 object-scale-down" src="assets//img/icons/icons8-planner-100.png"> </div>
+    <div class="flex space-x-0 shadow-xl rounded-lg">
+        <div class="bg-gradient-to-t from-gray-400 to-gray-300 via-gray-300 h-60 w-14 rounded-l-lg shadow-xl">
+            <span class="block transform -rotate-90 translate-y-44 text-3xl whitespace-nowrap">Run 2191</span>
+        </div>
+        <div class="bg-gray-200 rounded-lg w-full">
+            <span class="block p-10">Dec 05 @11:00 AM</span>
+            <span class="block text-base ml-10">Admirals car park, off Harlington Way, Fleet</span>
+        </div>
+    </div>
+</div>
+
 {{ content }}
 </div>
 {% include externals/scripting.html %}
