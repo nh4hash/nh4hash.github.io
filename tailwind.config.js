@@ -10,9 +10,13 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        headline: ['Bowlby']
+      },
       textColor: { 
         skin: {
-          base: 'var(--color-text-base)'
+          headlinePrimary: 'var(--color-text-headline-primary)',
+          headlineSecondary: 'var(--color-text-headline-secondary)'
         }
       }      
     },
