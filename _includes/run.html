@@ -19,7 +19,7 @@
           <div class="h2"><div class="page-title__subtitle">{{run.Location}}</div></div>
      {% endif %}
      {{run.PostCode}}
-     {% if run.What3Words != nil %}<p>W3W:///<a href ="https://w3w.co/{{ run.What3Words }}" target='_blank'>{{ run.What3Words }}</a><br/></p>{% endif %}
+     {% if run.What3Words != nil %}<p>W3W:///<a href ="https://w3w.co/{{ run.What3Words }}?maptype=satellite" target='_blank'>{{ run.What3Words }}</a><br/></p>{% endif %}
      {% if run.coordinates != nil %}<a href ="https://streetmap.co.uk/loc/{{ run.coordinates }}" target='_blank'>{{ run.OSGrid }}</a>{% endif %}
 </div>
 
