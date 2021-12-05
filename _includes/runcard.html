@@ -1,0 +1,14 @@
+{% assign runs = site.data.runlist | where:'RunNo', include.runno %}
+{% assign run = runs.first %}
+<div class="bg-gradient-to-t from-gray-400 to-gray-300 via-gray-300 border-2 border-gray-300 rounded-lg shadow-xl">
+    <div class="absolute ml-3 -mt-3"><img class="w-2/3 object-scale-down" src="assets//img/icons/icons8-planner-100.png"> </div>
+    <div class="flex space-x-0 shadow-xl rounded-lg">
+        <div class="bg-gradient-to-t from-gray-400 to-gray-300 via-gray-300 h-60 w-14 rounded-l-lg">
+            <span class="block transform -rotate-90 translate-y-44 text-3xl whitespace-nowrap">Run {{run.RunNo}}</span>
+        </div>
+        <div class="bg-gray-200 rounded-lg w-full">
+            <span class="block p-10">{{run.Date | date: "%b %d"}} @{{run.Time | date: "%I:%M %p" }}</span>
+            <span class="block text-base ml-10">{{run.Location}}</span>
+        </div>
+    </div>
+</div>

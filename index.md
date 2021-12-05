@@ -2,7 +2,17 @@
 layout: landing
 ---
 
-{% include run.html runno='2191' HaresTitle='Brought to you by' RunTitle='Your Next Run' %}
+
+
+<div class="flex justify-center">
+    
+     <div class="">
+          {% include runcard.html runno='2191' HaresTitle='Brought to you by' RunTitle='Your Next Run' %}
+     </div>
+
+</div>
+
+
 {% assign post = site.scribe.last %}
 <div class="h2">
      <p class="page-title__text">Run Report</p>

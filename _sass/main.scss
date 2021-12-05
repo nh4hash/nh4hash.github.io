@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
     :root {
-        --color-text-base: #000000;
+        --color-text-headline-primary: #A3E635;
+        --color-text-headline-secondary: #0284C7;
+    }
+
+    @font-face {
+        font-family: 'Bowlby';
+        src: url('/assets/fonts/bowlby-one-v12-latin-regular.woff2') format('woff2'), 
+            url('/assets/fonts/bowlby-one-v12-latin-regular.woff') format('woff');
     }
 }
 
