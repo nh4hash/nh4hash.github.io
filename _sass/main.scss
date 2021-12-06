@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
     :root {
         --color-text-headline-primary: #A3E635;
@@ -14,6 +13,15 @@
         src: url('/assets/fonts/bowlby-one-v12-latin-regular.woff2') format('woff2'), 
             url('/assets/fonts/bowlby-one-v12-latin-regular.woff') format('woff');
     }
+
+    @font-face {
+        font-family: 'Font Awesome 5 Brands';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url('/assets/fonts/fa-brands-400.woff2') format('woff2'),
+        url('/assets/fonts/fa-brands-400.woff') format('woff'),
+      }
 }
 
 .custom-shape-divider-bottom-1638221028 {
@@ -34,7 +42,9 @@
 }
 
 .custom-shape-divider-bottom-1638221028 .shape-fill {
-    fill: #FFFBEB;
+    fill: #46774f;
+    //fill: rgb(163,230,53);
+    //background: linear-gradient(160deg, rgba(163,230,53,1) 0%, rgba(70,119,79,1) 25%, rgba(0,36,99,1) 68%);
 }
 
 /** For tablet devices **/
