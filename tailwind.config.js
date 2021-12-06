@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        headline: ['Bowlby']
+        headline: ['Bowlby'],
+        fob:['Font Awesome 5 Brands']
       },
       textColor: { 
         skin: {
