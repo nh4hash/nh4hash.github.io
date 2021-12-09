@@ -1,10 +1,9 @@
 ---
-layout: landing
+layout: frontpage
 ---
-
 <div class="flex justify-center">
     
-     <div class="">
+     <div class="inline">
           {% include runcard.html runno='2192' HaresTitle='Brought to you by' RunTitle='Your Next Run' %}
      </div>
 

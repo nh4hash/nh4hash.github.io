@@ -1,3 +1,5 @@
+const { colors } = require('tailwindcss/defaultTheme');
+
 // tailwind.config.js
 module.exports = {
   purge: [
@@ -19,6 +21,10 @@ module.exports = {
           headlinePrimary: 'var(--color-text-headline-primary)',
           headlineSecondary: 'var(--color-text-headline-secondary)'
         }
+      },
+      colors: {
+        PrimaryLime: 'var(--background-primary)',
+        SecondaryBlue: 'var(--background-secondary)'
       }      
     },
   },
