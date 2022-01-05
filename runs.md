@@ -10,6 +10,8 @@
         <td><div class="location">
             {% if row.coordinates != nil %}
                 <a href='https://www.google.com/maps/search/?api=1&query={{ row.coordinates }}' target='_blank'>{{row.Location}}</a>
+            {% else %}
+                {{row.Location}}
             {% endif %}</div>
             <span class="location-links">
                 {{ row["PostCode"] }}<br/>
