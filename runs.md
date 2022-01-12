@@ -15,7 +15,7 @@
             {% endif %}</div>
             <span class="location-links">
                 {{ row["PostCode"] }}<br/>
-                <a href ="https://w3w.co/{{ row["What3Words"] }}" target='_blank'>{{ row["What3Words"] }}</a><br/>
+                <a href ="https://w3w.co/{{ row.What3Words }}?maptype=satellite" target='_blank'>{{ row["What3Words"] }}</a><br/>
                 {% if row.OSGrid != nil and row.coordinates != nil %}<a href ="https://streetmap.co.uk/loc/{{ row.coordinates }}" target='_blank'>{{ row.OSGrid }}</a>{% endif %}
             </span>
         </td>
