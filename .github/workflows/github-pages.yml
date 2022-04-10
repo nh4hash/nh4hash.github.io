@@ -37,6 +37,6 @@ jobs:
           # GITHUB_TOKEN secret is set up automatically
           github_token: ${{ secrets.GH_TOKEN }}
           keep_files: true
-          publish_branch: gh-pages-dev
+          publish_branch: gh-pages
           cname: nh4.org
           publish_dir: _site
