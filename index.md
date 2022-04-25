@@ -1,5 +1,5 @@
 <img src="{{ '/assets/img/NH4_Front_Page.jpg' | prepend: site.baseurl }}" id="about-img" alt="logo">
-{% include run.html runno='2213' HaresTitle='Brought to you by' RunTitle='Next Run' %}
+{% include run.html runno='2214' HaresTitle='Brought to you by' RunTitle='Next Run' %}
 {% assign post = site.scribe.last %}
 <div class="h2">
      <p class="page-title__text">Run Report</p>
@@ -13,7 +13,7 @@
 
 <div class="h2"><p class="page-title__text">Events</p></div>
 
-{% for event in site.posts reversed limit:2 %}
+{% for event in site.posts limit:3 %}
 <div class="h2">
      <p class="page-title__subtext">{{event.title}}</p>
 </div>
