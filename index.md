@@ -13,7 +13,7 @@
 
 <div class="h2"><p class="page-title__text">Events</p></div>
 
-{% for event in site.posts reversed limit:2 %}
+{% for event in site.posts limit:3 %}
 <div class="h2">
      <p class="page-title__subtext">{{event.title}}</p>
 </div>
