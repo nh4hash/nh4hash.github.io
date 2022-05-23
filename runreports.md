@@ -14,4 +14,4 @@ subtitle: Select ramblings from our scribe.
 <span class="post-teaser__title">{{ post.title }}</span>
 <span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>
 </a></p> 
-{% endfor %} 
+{% endfor %}
