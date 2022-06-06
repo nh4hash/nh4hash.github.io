@@ -26,6 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://nh4.org
 twitter_username: nh4hash
 github_username:  nh4hash
+nextrun: 2220
 
 timezone: Europe/London
 

@@ -1,4 +1,4 @@
-[2022 Past Runs](/pastruns) |
+[Run List](/runs) |
 [Old News](https://old.nh4.org/2009/NH4_Arch2000.htm){:target="_blank"} | 
 [Ancient News](https://old.nh4.org/2009/NH4_Archives.htm){:target="_blank"}
 {% assign runlist = site.data.runlist | sort: 'RunNo' %}
@@ -7,11 +7,11 @@
     {% if forloop.first %}{% include runlistheader.html %}{% endif %}
     {% if row.RunNo != nil %}
     {% assign runNo = row.RunNo | times: 1 %}
-    {% if runNo < site.nextrun %}
-        {% break %}
+    {% if runNo >= site.nextrun %}
+        {% continue %}
     {% endif %}
     <tr id="runno_{{ row.RunNo }}">
-        <td class="runno">{{ row.RunNo }}</td>
+        <td class="runno"><a href='/scribe/{{row.RunNo}}.html'>{{row.RunNo}}</a></td>
         <td><div class="location">
             {% if row.coordinates != nil %}
                 <a href='https://www.google.com/maps/search/?api=1&query={{ row.coordinates }}' target='_blank'>{{row.Location}}</a>

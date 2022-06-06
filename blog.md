@@ -27,4 +27,4 @@ subtitle: Whats new
 {% endfor %}
 </ul>
 {% endfor %}
-</div>
+</div> 
