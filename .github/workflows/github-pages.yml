@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master # or master before October 2020
+  workflow_dispatch:
 
 jobs:
   github-pages:
