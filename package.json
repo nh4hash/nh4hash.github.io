@@ -5,6 +5,6 @@
     "jekyll:dev": "jekyll serve --incremental --watch",
     "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
     "dev": "concurrently --kill-others \"npm run jekyll:dev\"",
-    "build": "npm run jekyll:build"
+    "build": "wget -O ./_data/runlist.csv -q --header 'Content-Type: text/plain' 'https://docs.google.com/spreadsheets/d/171HfaKVc5J1HN4IxcHPhW6rfYFvkLbHLIIk7gNLouRs/gviz/tq?tqx=out:csv&sheet=RunList'; npm run jekyll:build"
   }
 }
