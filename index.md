@@ -22,4 +22,4 @@
 [Details]({{event.url}})
 <div class="page-title__subtext"><strong>{{event.author}}</strong></div>
 <div>{{event.excerpt}}</div>
-{% endfor %} 
+{% endfor %}
