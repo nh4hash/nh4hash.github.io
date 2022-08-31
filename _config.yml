@@ -32,9 +32,10 @@ nextrun: 2232
 timezone: Europe/London
 
 # Build settings
-remote_theme: knhash/Pudhina
+#remote_theme: knhash/Pudhina
 plugins:
-  - jekyll-feed
+  - jekyll-postcss-v2
+  #- jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -44,7 +45,12 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
+    - package-lock.json
+    - package.json
+    - postcss.config.js
+    - README.md
+    - CNAME
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

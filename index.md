@@ -1,6 +1,17 @@
+---
+layout: frontpage
+---
 <img src="{{ '/assets/img/NH4_Front_Page.jpg' | prepend: site.baseurl }}" id="about-img" alt="logo">
 
 {% include run.html runno=site.nextrun HaresTitle='Brought to you by' RunTitle='Next Run' %}
+<div class="flex justify-center">
+    
+     <div class="inline">
+          {% include runcard.html runno='2192' HaresTitle='Brought to you by' RunTitle='Your Next Run' %}
+     </div>
+
+</div> 
+
 {% assign post = site.scribe.last %}
 {% assign runs = site.data.runlist | where:'RunNo', post.run %}
 {% assign run = runs.first %}

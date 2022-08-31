@@ -16,7 +16,13 @@ source "https://rubygems.org"
 gem "github-pages", "~> 225", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  #gem "jekyll-feed", "~> 0.12"
+  gem "kramdown-parser-gfm", "~> 1.1"
+  gem "jekyll-optional-front-matter", "~> 0.3"
+  gem "jekyll-relative-links"
+  gem "jekyll-remote-theme"
+  gem "jekyll-default-layout"
+  gem 'jekyll-postcss-v2'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
