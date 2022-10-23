@@ -3,7 +3,7 @@
 [Ancient News](https://old.nh4.org/2009/NH4_Archives.htm){:target="_blank"}
 {% assign runlist = site.data.runlist | sort: 'RunNo' %}
 <table id="runlist-tbl">
-  {% for row in runlist reversed %}
+  {% for row in runlist %}
     {% if forloop.first %}{% include runlistheader.html %}{% endif %}
     {% if row.RunNo != nil %}
     {% assign runNo = row.RunNo | times: 1 %}
