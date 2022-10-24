@@ -8,7 +8,7 @@
     {% if row.RunNo != nil %}
     {% assign runNo = row.RunNo | times: 1 %}
     {% if runNo < site.nextrun %}
-        {% break %}
+        {% continue %}
     {% endif %}
     <tr id="runno_{{ row.RunNo }}">
         <td class="runno">{{ row.RunNo }}</td>
