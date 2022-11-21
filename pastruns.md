@@ -28,7 +28,7 @@
         <td class="hideonmobile">{{ row["Hares"] }}</td>
         <td class="hideonmobile">{{ row["On Inn"] }}</td>
         <td class="hideonmobile">{{ row["Notes"] }}</td>
-    </tr>
+    </tr> 
     {% endif %}
   {% endfor %}
 </table>
